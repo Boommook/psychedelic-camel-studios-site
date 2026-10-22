@@ -1,6 +1,6 @@
 # Psychedelic Camel Studios
 
-A fully static Next.js App Router site for the WPI Technical Game Development II project. Server Components render the content at build time; only navigation and the perception toggle require client components. No database, API, accounts, or CMS.
+A Next.js App Router site for the WPI Technical Game Development II project, deployed with Vercel's native Next.js integration. Server Components prerender the content at build time; only navigation and the perception toggle require client components. No database, API, accounts, or CMS.
 
 ## Run and validate
 
@@ -15,14 +15,18 @@ npm run typecheck
 npm run build
 ```
 
-The production static export is in `out/`. Commit `package-lock.json` and use `npm ci` for repeatable installs. Only source-controlled, trusted MDX should be added: MDX can execute code during builds.
+The production build is in `.next/`. Run `npm start` to serve it locally. This project does not use `output: "export"` or generate an `out/` deployment. Any leftover local `out/` directory is obsolete. Commit `package-lock.json` and use `npm ci` for repeatable installs. Only source-controlled, trusted MDX should be added: MDX can execute code during builds.
 
 ## Deploy on Vercel
 
 1. Push this repository to GitHub and import it into Vercel.
-2. Select the Next.js preset. The build command is `npm run build`; the static output is `out` (set the Output Directory override if needed).
+2. Set Root Directory to the repository root (the directory containing `package.json`, `next.config.ts`, and `src/app`). Select the **Next.js** Framework Preset. Use `npm run build` as the Build Command and the default npm installation command (or `npm ci`). Turn the **Output Directory override off**, leaving the Next.js default. Remove any previous `out` or `public` override. Do not configure Vercel to publish a static directory.
 3. Set `NEXT_PUBLIC_SITE_URL` to the full production URL, e.g. `https://your-project.vercel.app`, with no trailing slash. This controls canonical metadata origins, sitemap, and robots URLs. Local development defaults to localhost.
 4. Deploy. Future pushes rebuild the entire site, including newly added content. No secrets or backend configuration are needed.
+
+The checked-in `vercel.json` explicitly selects `nextjs`, runs the production build, and resets `outputDirectory` to `null` so the framework default is used. Vercel handles `.next/` and its route manifests through the Next.js integration; do not upload `.next/` as ordinary static files. See [Vercel build configuration](https://vercel.com/docs/builds/configure-a-build) and [project configuration](https://vercel.com/docs/project-configuration/vercel-json).
+
+If an existing deployment is Ready but every route returns `404_NOT_FOUND`, check these settings in the Vercel project and any environment-specific overrides, then redeploy the corrected commit without the build cache. The previous README instructed Vercel to publish `out`; that instruction was for the former static export and conflicts with the current native build. Confirm the build log detects Next.js and lists the App Router routes (`/`, `/about`, `/devlog`, `/devlog/[slug]`, and `/resources`), and that the deployment output includes application routes. A prerendered/static route in the Next.js build summary is normal and does not mean the app uses static export.
 
 ## Quick content updates
 
@@ -72,7 +76,7 @@ Edit `src/data/resources.ts`. The pages render these arrays automatically; no UR
 
 - **Executable downloads:** add an entry to `builds` with `url`, `platform`, `version`, `date` (YYYY-MM-DD), optional `size`, `instructions`, and optional `releaseNotes`. Host large binaries on GitHub Releases or another download host; keep them out of this repository.
 - **Videos:** set `youtubeId` to the 11-character YouTube ID, or `src` to a local `/videos/demo.mp4` URL. Optional `poster` supports local video. YouTube embeds use the privacy-enhanced domain, lazy loading, and no autoplay. Add captions to local video through the shared VideoEmbed component before publishing a video with speech.
-- **Screenshots/concept art:** place files in `public/images/` and add entries to `images` with `id`, `src`, descriptive `alt`, actual `width` and `height`, and optional `caption`. The responsive gallery links to full images. It uses Next Image with static-export-compatible unoptimized delivery; optimize large source assets before committing them.
+- **Screenshots/concept art:** place files in `public/images/` and add entries to `images` with `id`, `src`, descriptive `alt`, actual `width` and `height`, and optional `caption`. The responsive gallery links to full images. It uses Next Image with unoptimized delivery; optimize large source assets before committing them.
 - **Treatment document:** put the PDF in `public/documents/treatment.pdf`, then set the treatment entry's `url` to `/documents/treatment.pdf` and optionally `downloadUrl` to the same URL. Open and Download actions appear when configured.
 - **Presentation slides:** add a PDF to `public/documents/` or use a public hosted presentation URL. Update the `beta-slides` entry, preserving `kind: 'Presentation'`.
 - **Other artifacts:** add document entries with a title, description, kind, format, and URL. Local PDFs work through the browser's PDF viewer.
@@ -93,8 +97,8 @@ Page metadata and the generated sharing image read centralized config. `public/i
 
 ## Verification notes
 
-After `npm run build`, run `node scripts/verify-export.mjs` to check primary exported routes, sample MDX rendering, internal links, and the pre-paint perception initializer with normal, altered, invalid, and blocked storage. If you replace the sample post, update the sample-specific assertions in this script.
+After `npm run build`, run `node scripts/verify-build.mjs` to check native Next.js configuration, route manifests, primary prerendered routes, metadata routes, sample MDX rendering, internal links, and the pre-paint perception initializer with normal, altered, invalid, and blocked storage. This reads `.next/` and `public/`, never the obsolete `out/` directory. If you replace the sample post, update the sample-specific assertions in this script.
 
-Lint, strict TypeScript checks, production build, and export verification passed during implementation. Browser preview was unavailable in the implementation session, so visual checks at mobile/tablet/desktop sizes and keyboard interaction with the switch should be performed locally. Toggle a state, navigate to another page, then reload to check persistence.
+For a local production smoke check, run `npm start` after building and visit `/`, `/about/`, `/devlog/`, `/resources/`, and a devlog post. Visual checks at mobile/tablet/desktop sizes and keyboard interaction with the switch should be performed locally. Toggle a state, navigate to another page, then reload to check persistence.
 
-`npm audit --omit=dev` reported zero vulnerabilities during implementation. The full audit reported five high-severity findings in the upstream ESLint/fast-glob/micromatch/braces development-tool chain; no patched braces release was available. These dependencies are not included in the static deployment. Recheck upstream updates periodically; avoid the suggested forced Next.js ESLint downgrade.
+`npm audit --omit=dev` reported zero vulnerabilities during implementation. The full audit reported five high-severity findings in the upstream ESLint/fast-glob/micromatch/braces development-tool chain; no patched braces release was available. These are development dependencies. Recheck upstream updates periodically; avoid the suggested forced Next.js ESLint downgrade.

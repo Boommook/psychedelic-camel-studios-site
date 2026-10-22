@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: { card: "summary_large_image" },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/psychedelic_camels_icon.png" },
 };
 const themeScript = `(function(){try{document.documentElement.dataset.perception=localStorage.getItem('perception')==='altered'?'altered':'normal'}catch(e){}})()`;
 export default function RootLayout({

@@ -52,8 +52,7 @@ export function Footer() {
     <footer className="container footer">
       <div>
         <Link href="/" className="footer-brand">
-          <Image src="/images/team-logo.png" alt="Logo" width={20} height={20} />
-          {site.studio}
+          <Image src="/images/psychedelic_camels_icon-expanded.png" alt="Logo" width={200} height={200} />
         </Link>
       </div>
       <div>
@@ -65,9 +64,6 @@ export function Footer() {
           </a>
         ))}
       </div>
-      <span className="footer-note">
-        STUDENT GAME PROJECT / {new Date().getFullYear()}
-      </span>
     </footer>
   );
 }

@@ -33,7 +33,7 @@ export default function Home() {
           <p className="hero-description">{site.description}</p>
           <div className="hero-actions">
             <Button asChild>
-              <Link href="/about/">
+              <Link href="/about/" >
                 Explore the Project <ArrowUpRight size={17} />
               </Link>
             </Button>
@@ -43,21 +43,9 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-          <p className="working-title">WORKING TITLE. OPEN POSSIBILITIES.</p>
         </div>
         <div className="hero-art">
           <Portal />
-          <div className="art-caption">
-            <span>FIG. 01 / A DIFFERENT PERSPECTIVE</span>
-            <span className="art-caption-dot" />
-          </div>
-        </div>
-        <div className="hero-bottom">
-          <span>
-            <Mouse size={14} />
-            SCROLL TO LOOK CLOSER
-          </span>
-          <span>AN {site.engine.toUpperCase()} PROJECT · WPI</span>
         </div>
       </section>
       <div className="project-strip">
@@ -80,16 +68,13 @@ export default function Home() {
         <div>
           <p className="eyebrow">01 / THE IDEA</p>
           <h2>
-            Something familiar.
-            <br />
-            <span className="muted-heading">Something off.</span>
+            Elevator Pitch
           </h2>
         </div>
         <div className="intro-copy my-auto">
-          <p className="large-copy">Elevator Pitch</p>
-          <p>{game.elevatorPitch}</p>
+          <p className="!text-lg">{game.elevatorPitch}</p>
           <Link href="/about/" className="text-link">
-            Meet the project & the people <ArrowUpRight size={16} />
+            Learn more about the project <ArrowUpRight size={16} />
           </Link>
         </div>
       </section>

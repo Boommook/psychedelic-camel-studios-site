@@ -20,15 +20,7 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand" aria-label={`${site.studio} home`}>
-          <Image src="/images/team-logo.png" alt={`${site.studio} logo`} width={31} height={31} />
-          <span className="!text-md">
-            PSYCHEDELIC CAMEL<span style={{
-              display: "block",
-              color: "var(--muted)",
-              fontSize: "12px",
-              letterSpacing: "0.36em",
-            }}>STUDIOS</span>
-          </span>
+          <Image src="/images/psychedelic_camels_icon-expanded.png" alt={`${site.studio} logo`} width={150} height={150} />
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map((link) => (

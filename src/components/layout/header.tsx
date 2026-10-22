@@ -19,7 +19,7 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand" aria-label={`${site.studio} home`}>
-          <Image src="/images/team-logo.png" alt={`${site.studio} logo`} width={31} height={31} />
+          <img src="/images/team-logo.png" alt={`${site.studio} logo`} width={31} height={31} />
           <span>
             PSYCHEDELIC CAMEL<small>STUDIOS</small>
           </span>

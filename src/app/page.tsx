@@ -8,6 +8,7 @@ import {
   Mouse,
 } from "lucide-react";
 import { site } from "@/config/site";
+import { game } from "@/data/game";
 import { videos } from "@/data/resources";
 import { getPosts } from "@/lib/devlog";
 import { Button } from "@/components/ui/button";
@@ -84,20 +85,9 @@ export default function Home() {
             <span className="muted-heading">Something off.</span>
           </h2>
         </div>
-        <div className="intro-copy">
-          <p className="large-copy">
-            What happens when you can no longer trust the way you see the world?
-          </p>
-          <p>
-            We’re exploring a surreal puzzle/adventure concept where perception,
-            space, and the everyday may not quite agree. A familiar place could
-            become unfamiliar. A different perspective could change what seems
-            possible.
-          </p>
-          <p className="concept-note">
-            This is a direction, not a promise. The game is in early
-            preproduction; its story and mechanics are still being explored.
-          </p>
+        <div className="intro-copy my-auto">
+          <p className="large-copy">Elevator Pitch</p>
+          <p>{game.elevatorPitch}</p>
           <Link href="/about/" className="text-link">
             Meet the project & the people <ArrowUpRight size={16} />
           </Link>
@@ -123,19 +113,10 @@ export default function Home() {
             All entries <ArrowUpRight size={16} />
           </Link>
         </div>
-        <div className="home-posts">
+        <div className="home-posts w-full">
           {posts.map((post) => (
             <DevlogPreview key={post.slug} post={post} />
           ))}
-          <aside className="journal-note">
-            <span className="micro">AN OPEN PROCESS</span>
-            <p>
-              Ideas. Experiments.
-              <br />
-              Changes in perspective.
-            </p>
-            <span>Follow the project as it takes shape.</span>
-          </aside>
         </div>
       </section>
       <section className="container resource-callout">

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X, Orbit } from "lucide-react";
 import { site } from "@/config/site";
 import { PerceptionToggle } from "@/components/perception/toggle";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Home" },
@@ -19,9 +20,14 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand" aria-label={`${site.studio} home`}>
-          <img src="/images/team-logo.png" alt={`${site.studio} logo`} width={31} height={31} />
-          <span>
-            PSYCHEDELIC CAMEL<small>STUDIOS</small>
+          <Image src="/images/team-logo.png" alt={`${site.studio} logo`} width={31} height={31} />
+          <span className="!text-md">
+            PSYCHEDELIC CAMEL<span style={{
+              display: "block",
+              color: "var(--muted)",
+              fontSize: "12px",
+              letterSpacing: "0.36em",
+            }}>STUDIOS</span>
           </span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -34,6 +40,7 @@ export function Header() {
                   ? "page"
                   : undefined
               }
+              className="text-lg"
             >
               {link.label}
             </Link>

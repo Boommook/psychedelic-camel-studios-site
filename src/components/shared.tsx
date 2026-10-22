@@ -52,10 +52,9 @@ export function Footer() {
     <footer className="container footer">
       <div>
         <Link href="/" className="footer-brand">
-          <Orbit size={20} />
+          <Image src="/images/team-logo.png" alt="Logo" width={20} height={20} />
           {site.studio}
         </Link>
-        <p>A different perspective. A work in progress.</p>
       </div>
       <div>
         <p>{site.university}</p>
@@ -177,7 +176,7 @@ export function MediaGallery({ images }: { images: GalleryImage[] }) {
 }
 export function DevlogPreview({ post }: { post: DevlogPost }) {
   return (
-    <article className="post-preview">
+    <article className="post-preview ">
       {post.cover && (
         <Image
           src={post.cover}
@@ -186,7 +185,7 @@ export function DevlogPreview({ post }: { post: DevlogPost }) {
           height={450}
         />
       )}
-      <div className="post-meta">
+      <div className="post-meta ">
         <time dateTime={post.date}>{formatDate(post.date)}</time>
         <span>{post.tags.join(" / ")}</span>
       </div>
@@ -226,22 +225,8 @@ export function TeamProfile({
         <span className="micro">{member.discipline}</span>
       </div>
       <h3>{member.name}</h3>
-      <p className="role">{member.role}</p>
-      {member.biography && <p>{member.biography}</p>}
-      <div className="profile-links">
-        {[
-          { url: member.portfolio, icon: Globe, label: "Portfolio" },
-          { url: member.github, icon: Code2, label: "GitHub" },
-          { url: member.linkedin, icon: BriefcaseBusiness, label: "LinkedIn" },
-        ].map(
-          ({ url, icon: Icon, label }) =>
-            url && (
-              <a key={label} href={url} aria-label={`${member.name} ${label}`}>
-                <Icon size={18} />
-              </a>
-            ),
-        )}
-      </div>
+      <p className="role !mb-0 !pb-0">{member.role}</p>
+      <p>{member.email && <a className="text-link" href={`mailto:${member.email}`}>{member.email} <ArrowUpRight size={16} /></a>}</p>
     </article>
   );
 }

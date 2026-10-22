@@ -726,19 +726,22 @@ html[data-perception="altered"] .portal-frame {
 }
 .home-posts {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 70px;
+  width: 100%;
 }
 .post-preview {
   border-top: 1px solid var(--border);
-  padding: 30px 0 36px;
+  box-shadow: 0 0 10px 0 rgba(230, 215, 215, 0.537);
+  padding: 20px;
+  border-radius: 10px;
 }
 .post-meta {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   color: #a198b0;
-  font-size: 9px;
+  font-size: 12px;
   margin-bottom: 18px;
 }
 .post-meta > span {
@@ -860,10 +863,16 @@ html[data-perception="altered"] .portal-frame {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 90px;
+}
+.about-overview:first-of-type {
   padding-top: 20px;
 }
 .about-overview h2 {
-  margin-top: 24px;
+  margin-top: 0;
+}
+.prose-copy .micro {
+  display: block;
+  margin-bottom: 16px;
 }
 .prose-copy p {
   font-size: 14px;
@@ -1503,7 +1512,9 @@ html[data-perception="altered"] .portal-frame {
   }
   .about-overview {
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 12px;
+  }
+  .about-overview:first-of-type {
     padding-top: 10px;
   }
   .about-overview h2 {

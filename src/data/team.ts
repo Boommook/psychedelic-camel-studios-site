@@ -4,10 +4,7 @@ export type TeamMember = {
   role: string;
   discipline: "Technical" | "Art";
   photo?: string;
-  biography?: string;
-  portfolio?: string;
-  github?: string;
-  linkedin?: string;
+  email?: string;
 };
 
 export const members: TeamMember[] = [
@@ -16,43 +13,51 @@ export const members: TeamMember[] = [
     name: "Cole Bennett",
     role: "Technical Lead",
     discipline: "Technical",
-    photo: "/images/cole-eating-shroom.JPG",
+    photo: "/images/team/cole-eating-shroom.JPG",
+    email: "nmbennett@wpi.edu",
   },
   {
     id: "member-2",
     name: "Brandon Contardi",
     role: "Environment Design",
     discipline: "Technical",
+    email: "bocontardi@wpi.edu",
   },
   {
     id: "member-3",
     name: "Berenis Tekin",
     role: "Puzzle Design",
     discipline: "Technical",
+    email: "btekin@wpi.edu",
   },
   {
     id: "member-4",
     name: "Chloe Polit",
     role: "Environmental Design & Puzzle Design",
     discipline: "Technical",
+    photo: "/images/team/chloe.jpg",
+    email: "cmpolit@wpi.edu"
   },
   {
     id: "member-5",
     name: "Domenic \"Mr. Developer\" Kramer",
     role: "Writer & Programmer",
     discipline: "Technical",
+    email: "dkramer@wpi.edu"
   },
   {
     id: "member-6",
     name: "Morgan Acevedo",
     role: "Writer & 3D+2D Modeler",
     discipline: "Art",
+    email: "mmacevedo@wpi.edu"
   },
   {
     id: "member-7",
     name: "Trevor Jolin",
     role: "3D Modeler & Character Design",
     discipline: "Art",
+    email: "tjolin@wpi.edu"
   },
 ];
 export const team: TeamMember[] = Array.from({ length: 7 }, (_, i) => ({

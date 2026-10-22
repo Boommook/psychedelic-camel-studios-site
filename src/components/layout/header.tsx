@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X, Orbit } from "lucide-react";
 import { site } from "@/config/site";
 import { PerceptionToggle } from "@/components/perception/toggle";
+
 const links = [
   { href: "/", label: "Home" },
   { href: "/about/", label: "About" },
@@ -18,7 +19,7 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="brand" aria-label={`${site.studio} home`}>
-          <Orbit size={31} strokeWidth={1.3} />
+          <Image src="/images/team-logo.png" alt={`${site.studio} logo`} width={31} height={31} />
           <span>
             PSYCHEDELIC CAMEL<small>STUDIOS</small>
           </span>

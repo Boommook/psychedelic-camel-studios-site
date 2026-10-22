@@ -86,10 +86,6 @@ export default function About() {
           </div>
           <span className="micro">05 TECHNICAL / 02 ART</span>
         </div>
-        <p className="team-notice">
-          Placeholder profiles — team names, biographies, and links will be
-          added here.
-        </p>
         <div className="team-grid">
           {members.map((member: TeamMember, i: number) => (
             <TeamProfile key={member.id} member={member} index={i} />

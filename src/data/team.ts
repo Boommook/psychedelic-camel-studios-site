@@ -16,7 +16,7 @@ export const members: TeamMember[] = [
     name: "Cole Bennett",
     role: "Technical Lead",
     discipline: "Technical",
-    photo: "/images/team/cole.jpg",
+    photo: "/images/cole-eating-shroom.JPG",
   },
   {
     id: "member-2",

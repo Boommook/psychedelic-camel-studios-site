@@ -27,7 +27,6 @@ export default function Home() {
           </div>
           <h1 className="game-title">
             {site.title}
-            <span className="title-period">.</span>
           </h1>
           <p className="hero-tagline">{site.tagline}</p>
           <p className="hero-description">{site.description}</p>

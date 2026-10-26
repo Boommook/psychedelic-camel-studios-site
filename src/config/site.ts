@@ -1,6 +1,6 @@
 export const site = {
   studio: "Psychedelic Camel Studios",
-  title: "Bad Trip",
+  title: "paRAnoia",
   tagline: "Reality is a matter of perception.",
   description:
     "A student game project exploring perception, surreal environments, and the unfamiliar within the familiar. Currently in brainstorming and preproduction.",

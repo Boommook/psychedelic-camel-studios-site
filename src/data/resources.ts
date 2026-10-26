@@ -57,6 +57,7 @@ export const documents: DocumentResource[] = [
     description:
       "The project direction, design intentions, and proposed experience.",
     kind: "Document",
+    downloadUrl: "/documents/Treatment Document.pdf",
     format: "PDF",
   },
   {

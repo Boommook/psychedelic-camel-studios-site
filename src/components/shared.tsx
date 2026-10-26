@@ -3,9 +3,6 @@ import Image from "next/image";
 import {
   ArrowUpRight,
   ArrowRight,
-  Code2,
-  BriefcaseBusiness,
-  Globe,
   FileText,
   Download,
   Play,
@@ -229,6 +226,7 @@ export function ResourceEntry({
   resource: Build | DocumentResource;
 }) {
   const build = "platform" in resource;
+  const downloadUrl = "downloadUrl" in resource ? resource.downloadUrl : resource.url;
   return (
     <article className="resource-entry">
       <span className="resource-icon">
@@ -262,14 +260,14 @@ export function ResourceEntry({
         )}
       </div>
       <div className="resource-action">
-        {resource.url ? (
+        {downloadUrl ? (
           <>
-            <a className="text-link" href={resource.url}>
+            <a className="text-link" href={downloadUrl}>
               {build ? "Download build" : "Open file"}
               <ArrowUpRight size={16} />
             </a>
-            {!build && resource.downloadUrl && (
-              <a href={resource.downloadUrl} download>
+            {!build && downloadUrl && (
+              <a href={downloadUrl} download>
                 Download
               </a>
             )}

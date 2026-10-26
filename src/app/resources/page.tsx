@@ -18,8 +18,8 @@ export default function Resources() {
     <div className="container">
       <PageHeader
         eyebrow="THE PROJECT ARCHIVE"
-        title="From ideas to artifacts."
-        description="The home for playable builds, media, and course deliverables. Resources will appear here as the project develops."
+        title="Evidence of the madness."
+        description="Explore the concept art, playable builds, development footage, and design documents behind paRAnoia."
       />
       <nav className="resource-nav" aria-label="Resource sections">
         <a href="#downloads">01 / Downloads</a>
@@ -52,8 +52,10 @@ export default function Resources() {
             <VideoEmbed video={video} />
           </div>
         ))}
-        <h3 className="gallery-heading">Screenshots & visual development</h3>
-        <MediaGallery images={images} />
+        <div className="resource-media">
+          <h3 className="gallery-heading">Screenshots & visual development</h3>
+          <MediaGallery images={images} />
+        </div>
       </section>
       <section className="section" id="documents">
         <div className="section-heading">

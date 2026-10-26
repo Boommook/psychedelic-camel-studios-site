@@ -139,9 +139,6 @@ export function VideoEmbed({ video }: { video: Video }) {
         <p>Footage is still on the other side.</p>
         <span className="micro">COMING SOON · NO GAMEPLAY FOOTAGE YET</span>
       </div>
-      <span className="media-label">
-        ABSTRACT PERCEPTION STUDY — NOT GAME ART
-      </span>
     </div>
   );
 }

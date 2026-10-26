@@ -67,7 +67,7 @@ export default function Home() {
         <div>
           <p className="eyebrow">01 / THE IDEA</p>
           <h2>
-            Elevator Pitch
+            Welcome to Camelot Hall.
           </h2>
         </div>
         <div className="intro-copy my-auto">
@@ -80,10 +80,9 @@ export default function Home() {
       <section className="container section media-section">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">02 / THROUGH THE LENS</p>
-            <h2>A glimpse, eventually.</h2>
+            <p className="eyebrow">02 / A GLIMPSE</p>
+            <h2>A look at the world we're building.</h2>
           </div>
-          <span className="micro">THE WORLD IS STILL IN THE MAKING</span>
         </div>
         <VideoEmbed video={videos[0]} />
       </section>
@@ -105,11 +104,10 @@ export default function Home() {
       </section>
       <section className="container resource-callout">
         <div>
-          <p className="eyebrow">THE PROJECT, IN ONE PLACE</p>
-          <h2>Follow what takes shape.</h2>
+          <p className="eyebrow">BEHIND THE TRIP</p>
+          <h2>See how the madness unfolds.</h2>
           <p>
-            Builds, documents, media, and course deliverables — as they become
-            available.
+            Builds, documents, media, and course deliverables — as they're created.
           </p>
         </div>
         <Button asChild variant="outline">

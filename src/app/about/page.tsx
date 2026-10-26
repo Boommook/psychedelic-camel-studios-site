@@ -24,6 +24,7 @@ const sections = [
     eyebrow: "03 / NARRATIVE",
     title: "Game narrative.",
     copy: game.narrative,
+    copy2: game.narrative2,
   },
 ];
 
@@ -33,7 +34,7 @@ export default function About() {
       <PageHeader
         eyebrow="THE PROJECT / THE PEOPLE"
         title="A shared curiosity."
-        description="The pitch, how it plays, and the story — and the seven people building it."
+        description="The pitch, gameplay, story, and team."
       />
       {sections.map((section) => (
         <section className="about-overview section" key={section.eyebrow}>
@@ -42,8 +43,9 @@ export default function About() {
             <h2>{section.title}</h2>
           </div>
           <div className="prose-copy">
-            <p className="micro">PLACEHOLDER</p>
             <p className="large-copy">{section.copy}</p>
+            <br />
+            <p className="large-copy">{section.copy2}</p>
           </div>
         </section>
       ))}

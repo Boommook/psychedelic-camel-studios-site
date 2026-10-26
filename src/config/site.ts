@@ -1,9 +1,9 @@
 export const site = {
   studio: "Psychedelic Camel Studios",
   title: "paRAnoia",
-  tagline: "Reality is a matter of perception.",
+  tagline: "Just another night on duty, what could go wrong?",
   description:
-    "A student game project exploring perception, surreal environments, and the unfamiliar within the familiar. Currently in brainstorming and preproduction.",
+    "A student game project exploring perception, surreal environments, and the unfamiliar within the familiar.",
   course: "Technical Game Development II",
   university: "Worcester Polytechnic Institute",
   engine: "Unreal Engine",

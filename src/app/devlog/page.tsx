@@ -11,8 +11,8 @@ export default function Devlog() {
     <div className="container">
       <PageHeader
         eyebrow="NOTES FROM THE PROCESS"
-        title="An evolving perspective."
-        description="The questions we ask. The ideas we test. A development journal from the first possibilities onward."
+        title="Documenting the descent."
+        description="Follow the development of paRAnoia, from early concepts to finalized puzzles, environments, and playable builds."
       />
       <div className="devlog-layout">
         <div>
@@ -21,17 +21,10 @@ export default function Devlog() {
           ))}
         </div>
         <aside className="devlog-aside">
-          <span className="micro">CURRENT CHAPTER</span>
-          <h2>At the beginning.</h2>
+          <span className="micro">CURRENT PHASE</span>
+          <h2>Building Camelot Hall.</h2>
           <p>
-            The project is in brainstorming and preproduction. Entries will
-            follow its development throughout the term.
-          </p>
-          <span className="aside-line" />
-          <p>
-            Early ideas may change.
-            <br />
-            That’s part of the process.
+          With the core concept established, we're exploring how to bring Twizz's increasingly unpredictable night shift to life in Unreal Engine.
           </p>
         </aside>
       </div>

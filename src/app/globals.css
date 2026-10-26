@@ -1163,6 +1163,10 @@ html[data-perception="altered"] .portal-frame {
 .resource-video + .resource-video {
   margin-top: 45px;
 }
+.resource-media > h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
 .gallery-heading {
   font-size: 23px;
   margin-top: 50px;

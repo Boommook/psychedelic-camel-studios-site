@@ -81,7 +81,7 @@ export default async function Post({
       <div className="article-end">
         <span className="micro">END OF ENTRY</span>
         <Link href="/resources/" className="text-link">
-          Explore project resources ?
+          Explore project resources
         </Link>
       </div>
     </article>

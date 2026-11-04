@@ -1,0 +1,44 @@
+---
+title: "Blog Post 2"
+date: "2026-11-04"
+excerpt: "A discussion of our work during the second week of the course, in which we have begun preliminary development"
+tags: ["Early Production"]
+---
+
+## Technical Work
+
+### Cole
+
+The first work I completed this week was attempting to set up character movement from player input after Berenis got it started. I ran into an issue of two skeletal meshes spawning at the character spawn, which I eventually debugged to find that the game mode was adding an uncontrollable character (skeletal) mesh. I was also able to get the character moving; however, I could not figure out how to configure the camera and boom arm to follow the character in a third-person view. Luckily, Berenis was able to solve this cause she’s the goat.
+
+Next, I worked on two different post-processing effects with Materials by following YouTube tutorials. The first effect was a hallucination effect that creates a chromatic aberration in the viewport to simulate an altered state of perception. The intensity of the effect is driven by a looped sine wave to add variability to the hallucination. The second effect was a glitch effect that also had some chromatic aberration, but used a texture map to distort the viewport. The glitch effect changes positions every second to avoid a constant and unrealistic look. Both effects can be applied to the player character’s viewport by adding a post-processing component, or alternatively, they can be applied to an invisible volume as the material, which then affects the player character’s viewport whenever they are within the volume. In the future, we can make these effects increase in intensity with time, similarly to a real trip.
+
+### Berenis
+
+This past week, I spent time setting up a 3rd person camera to the spring arm, and looking into the interaction mechanic. The 3rd person camera is quite intuitive by getting mouse XY through the player controller. Future polishing would include enabling auto rotation so that whenever the player starts moving the character the opposite way and causing the character to stare at the camera, the spring arm auto-orients to fall behind the character again with a certain delay, despite still allowing for user control of the camera.
+
+The interaction aspect uses line tracing. By originating a line trace from the character to a specific distance from it, the controller checks for collision with an object (Press E). Future polishing and work for this includes prompting when the player character is within a certain radius of an interactable object, real vs. hallucination object tagging, and possibly looking into how objects should behave physically in both of these tags.
+
+### Domenic
+
+This week I worked on establishing the UI for the Pause and settings menu. Through the use of Widget Blueprints I was able to create a pause menu that can be unpaused by both the character with keybinds as well as using the resume button. I also laid out the groundwork for a settings menu that can control the volume levels of music sfx and a master control. I also have started to plan out the general design of the UI once the functionality has been fully implemented. Using a pseudo 3d effect for the buttons and potentially the sliders and a gradient for the background.
+
+Over the next week I’m going to focus on getting the audio control established so that the settings menu is fully functional and it can be implemented into the functionality of sfx and music. Once that is done the next step is working on making the UI look nice and can enhance the rest of the game.
+
+### Chloe
+
+This week I pulled the dorm hall level greybox that Trevor made into the project and set it as the Level 1 and started looking at making sure the environment is interactable and the character can move through the hallway. After our class on Monday I also started looking into sound and music for the game, which I’m continuing to work on using the recommended jsfxr site that was shown during class. I’m working to get a basic set of sounds that can be implemented as we continue developing the initial and first level, starting with basic player movement sound effects (like jumping, whispers, etc.), and then working on longer background music sequences that can play for each level as the player moves through it. After setting that up to play during Level 0 I’ll then focus on making sure the Level 1 environment is interactable and the character can move through it, setting up the next set of music for that level and working with Domenic to make sure the menu/settings screen connects to the music and allows for silencing the music/adjusting volume.
+
+### Brandon
+
+This week I worked on building a component that can be added to objects that make them behave how we want our hallucinated objects to behave. Specifically, we want to be able to make walls, doors, and other solid objects to be able to be hallucinated, and a hallucinated object will have no collision with the player and let them pass through, as well as letting light travel through them without actually looking translucent at all. We want light to pass through them so we can use a light mechanic to allow players to recognize hallucinations versus real objects. I also have begun trying to get it so that there is a toggle that allows a hallucinated object to disappear after it is either interacted with or passed through. I will probably have to make those as separate components, one for an interactable and one for the static objects, but it allows for hallucinations to be temporary rather than permanent fixtures to the level.
+
+## Artistic Work
+
+### Morgan
+
+This week, I began to work on modeling the typical furniture you’d find inside a dorm room. I’ve been using Maya to model the furniture.
+
+### Trevor
+
+This week, I started modeling the main character in Zbrush. I used various references including the face sketch and character body reference that Morgan posted in the Discord server. The majority of the modeling process is complete, meaning I will be able to start texturing, UV unwrapping, and rigging the character soon.

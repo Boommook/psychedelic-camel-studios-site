@@ -17,7 +17,9 @@ export default function Devlog() {
       <div className="devlog-layout">
         <div>
           {getPosts().map((post) => (
-            <DevlogPreview key={post.slug} post={post} />
+            <div key={post.slug} className="mb-8">
+              <DevlogPreview key={post.slug} post={post} />
+            </div>
           ))}
         </div>
         <aside className="devlog-aside">

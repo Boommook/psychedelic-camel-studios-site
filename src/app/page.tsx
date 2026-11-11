@@ -31,7 +31,31 @@ export default function Home() {
           <p className="hero-tagline">{site.tagline}</p>
           <p className="hero-description">{site.description}</p>
           <div className="hero-actions">
-            <Button asChild>
+            <div className="hero-download">
+              <Button asChild>
+                <a
+                  href="https://boommook.itch.io/paranoia-alpha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="alpha-download-info"
+                >
+                  Download Alpha Build <ArrowUpRight size={17} aria-hidden="true" />
+                </a>
+              </Button>
+              <span id="alpha-download-info" className="micro">
+                Windows PC · itch.io · opens in a new tab
+              </span>
+            </div>
+            <Button variant="outline" asChild>
+              <a
+                href="https://docs.google.com/presentation/d/14hpVd3AqQEUUKtDA5AxaWehZ-CtP75MTTWa9jwbi68E/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Alpha Presentation <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
               <Link href="/about/" >
                 Explore the Project <ArrowUpRight size={17} />
               </Link>

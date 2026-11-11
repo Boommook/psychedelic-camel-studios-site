@@ -226,6 +226,7 @@ export function ResourceEntry({
   resource: Build | DocumentResource;
 }) {
   const build = "platform" in resource;
+  const presentation = !build && resource.kind === "Presentation";
   const downloadUrl = "downloadUrl" in resource ? resource.downloadUrl : resource.url;
   return (
     <article className="resource-entry">
@@ -262,11 +263,17 @@ export function ResourceEntry({
       <div className="resource-action">
         {downloadUrl ? (
           <>
-            <a className="text-link" href={downloadUrl}>
-              {build ? "Download build" : "Open file"}
+            <a
+              className="text-link"
+              href={downloadUrl}
+              target={build || presentation ? "_blank" : undefined}
+              rel={build || presentation ? "noopener noreferrer" : undefined}
+              aria-label={build ? `Download ${resource.title} on itch.io (opens in a new tab)` : undefined}
+            >
+              {build ? "Download Alpha Build" : presentation ? "View Presentation" : "Open file"}
               <ArrowUpRight size={16} />
             </a>
-            {!build && downloadUrl && (
+            {!build && resource.downloadUrl && (
               <a href={downloadUrl} download>
                 Download
               </a>

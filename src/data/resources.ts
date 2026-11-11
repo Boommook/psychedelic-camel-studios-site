@@ -32,13 +32,14 @@ export type DocumentResource = BaseResource & {
 };
 export const builds: Build[] = [
   {
-    id: "playable-build",
-    title: "Playable game build",
+    id: "alpha-build",
+    title: "paRAnoia Alpha Build",
     description:
-      "An executable will be shared here when a playable build is ready.",
-    platform: "Platform to be confirmed",
+      "Play an early version of paRAnoia, available on itch.io.",
+    platform: "Windows PC",
+    url: "https://boommook.itch.io/paranoia-alpha",
     instructions:
-      "Installation instructions will accompany each published build.",
+      "Visit itch.io to download the alpha build for Windows PC.",
   },
 ];
 export const videos: Video[] = [
@@ -51,6 +52,14 @@ export const videos: Video[] = [
 ];
 export const images: GalleryImage[] = [];
 export const documents: DocumentResource[] = [
+  {
+    id: "alpha-slides",
+    title: "paRAnoia Alpha Presentation",
+    description: "Explore the team's alpha presentation on Google Slides.",
+    kind: "Presentation",
+    format: "Google Slides",
+    url: "https://docs.google.com/presentation/d/14hpVd3AqQEUUKtDA5AxaWehZ-CtP75MTTWa9jwbi68E/edit?usp=sharing",
+  },
   {
     id: "treatment",
     title: "Game treatment",

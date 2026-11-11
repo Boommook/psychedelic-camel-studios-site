@@ -330,9 +330,15 @@ html[data-perception="altered"] .toggle-track span {
 }
 .hero-actions {
   display: flex;
+  align-items: flex-start;
   gap: 12px;
   margin-top: 32px;
   flex-wrap: wrap;
+}
+.hero-download {
+  display: grid;
+  gap: 8px;
+  max-width: 100%;
 }
 .button {
   display: inline-flex;

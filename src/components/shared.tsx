@@ -56,8 +56,13 @@ export function Footer() {
         <p>{site.university}</p>
         <p>{site.course}</p>
         {site.socialLinks.map((link) => (
-          <a key={link.url} href={link.url}>
-            {link.label}
+          <a
+            key={link.url}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.label} <ArrowUpRight size={14} aria-hidden="true" />
           </a>
         ))}
       </div>
@@ -270,7 +275,7 @@ export function ResourceEntry({
               rel={build || presentation ? "noopener noreferrer" : undefined}
               aria-label={build ? `Download ${resource.title} on itch.io (opens in a new tab)` : undefined}
             >
-              {build ? "Download Alpha Build" : presentation ? "View Presentation" : "Open file"}
+              {build ? resource.actionLabel : presentation ? "View Presentation" : "Open file"}
               <ArrowUpRight size={16} />
             </a>
             {!build && resource.downloadUrl && (

@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { site } from "@/config/site";
 import { game } from "@/data/game";
-import { videos } from "@/data/resources";
+import { alphaBuild, playtestBuild, videos } from "@/data/resources";
 import { getPosts } from "@/lib/devlog";
 import { Button } from "@/components/ui/button";
 import { Status, Portal, VideoEmbed, DevlogPreview } from "@/components/shared";
@@ -34,18 +34,27 @@ export default function Home() {
             <div className="hero-download">
               <Button asChild>
                 <a
-                  href="https://boommook.itch.io/paranoia-alpha"
+                  href={playtestBuild.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-describedby="alpha-download-info"
+                  aria-describedby="playtest-download-info"
                 >
-                  Download Alpha Build <ArrowUpRight size={17} aria-hidden="true" />
+                  {playtestBuild.actionLabel} <ArrowUpRight size={17} aria-hidden="true" />
                 </a>
               </Button>
-              <span id="alpha-download-info" className="micro">
+              <span id="playtest-download-info" className="micro">
                 Windows PC · itch.io · opens in a new tab
               </span>
             </div>
+            <Button variant="outline" asChild>
+              <a
+                href={alphaBuild.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {alphaBuild.actionLabel} <ArrowUpRight size={17} aria-hidden="true" />
+              </a>
+            </Button>
             <Button variant="outline" asChild>
               <a
                 href="https://docs.google.com/presentation/d/14hpVd3AqQEUUKtDA5AxaWehZ-CtP75MTTWa9jwbi68E/edit?usp=sharing"

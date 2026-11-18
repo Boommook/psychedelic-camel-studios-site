@@ -1,3 +1,5 @@
+import { site } from "@/config/site";
+
 type BaseResource = {
   id: string;
   title: string;
@@ -11,6 +13,7 @@ export type Build = BaseResource & {
   size?: string;
   instructions: string;
   releaseNotes?: string;
+  actionLabel: string;
 };
 export type Video = BaseResource & {
   youtubeId?: string;
@@ -30,18 +33,29 @@ export type DocumentResource = BaseResource & {
   format: string;
   downloadUrl?: string;
 };
-export const builds: Build[] = [
-  {
-    id: "alpha-build",
-    title: "paRAnoia Alpha Build",
-    description:
-      "Play an early version of paRAnoia, available on itch.io.",
-    platform: "Windows PC",
-    url: "https://boommook.itch.io/paranoia-alpha",
-    instructions:
-      "Visit itch.io to download the alpha build for Windows PC.",
-  },
-];
+export const playtestBuild: Build = {
+  id: "playtest-build",
+  title: "paRAnoia Playtesting Build",
+  description:
+    "Play the current playtesting build of paRAnoia, available on itch.io.",
+  platform: "Windows PC",
+  date: "2026-11-18",
+  size: "167 KB",
+  url: site.externalUrls.playtest,
+  instructions:
+    "Visit itch.io to download the playtesting build for Windows PC.",
+  actionLabel: "Download Playtesting Build",
+};
+export const alphaBuild: Build = {
+  id: "alpha-build",
+  title: "paRAnoia Alpha Build",
+  description: "Play an early version of paRAnoia, available on itch.io.",
+  platform: "Windows PC",
+  url: "https://boommook.itch.io/paranoia-alpha",
+  instructions: "Visit itch.io to download the alpha build for Windows PC.",
+  actionLabel: "Download Alpha Build",
+};
+export const builds: Build[] = [playtestBuild, alphaBuild];
 export const videos: Video[] = [
   {
     id: "final-beta",

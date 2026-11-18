@@ -32,7 +32,7 @@ export default function Resources() {
             <p className="eyebrow">01 / PLAY THE PROJECT</p>
             <h2>Downloads</h2>
           </div>
-          <span className="micro">ALPHA BUILD AVAILABLE · WINDOWS PC</span>
+          <span className="micro">PLAYTESTING & ALPHA BUILDS · WINDOWS PC</span>
         </div>
         {builds.map((build) => (
           <ResourceEntry key={build.id} resource={build} />

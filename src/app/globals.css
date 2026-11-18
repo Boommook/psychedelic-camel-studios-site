@@ -841,6 +841,18 @@ html[data-perception="altered"] .portal-frame {
 .footer > div:nth-child(2) {
   text-align: right;
 }
+.footer > div:nth-child(2) a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 10px;
+  color: #d1bedf;
+}
+.footer > div:nth-child(2) a:hover {
+  color: var(--cyan);
+}
 .footer-note {
   font-size: 8px;
   color: #645d6f;

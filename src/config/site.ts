@@ -1,3 +1,5 @@
+const playtestUrl = "https://bossatron9000.itch.io/paranoia";
+
 export const site = {
   studio: "Psychedelic Camel Studios",
   title: "paRAnoia",
@@ -10,10 +12,16 @@ export const site = {
   status: "In Development",
   phase: "Brainstorming & preproduction",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  socialLinks: [] as { label: string; url: string }[],
+  socialLinks: [
+    {
+      label: "Playtesting build",
+      url: playtestUrl,
+    },
+  ],
   externalUrls: {
     university: "https://www.wpi.edu/",
     engine: "https://www.unrealengine.com/",
+    playtest: playtestUrl,
   },
   themes: [
     {

@@ -1,0 +1,38 @@
+---
+title: "Blog Post 3"
+date: "2026-11-18"
+excerpt: "A discussion of our work during the third and fourth week of the course, in which we have begun our main development."
+tags: ["Production"]
+---
+
+## Technical Work
+
+After Alpha, we recognized that our game was not playable and in a solid state. We immediately created a spreadsheet of features to be added and tasks to be done, the category, assigned team member, priority level, and status. This helped us stay on track for the week.
+
+### Cole
+
+Over the past week, I have largely taken on constructing our environment. To begin, I made a prototyped infinite hallway, which works by combining a few different techniques. First, the player must enter an activation trigger at the start of the hallway, which then enables a moving wall. As the player walks down the hallway, the wall moves at the same rate, and eventually the player enters the loop trigger, and is teleported back to near the activation trigger. Multiple extra rooms are also spawned at the end of the hallway, past the loop trigger, to make it seem as though the rooms go on forever. Initially, this prototype just used the greybox walls, floors, and furniture, but after completing the other environment decorating, I updated the infinite hallway to use the same models as the rest of the dormitory.
+
+My major work this week consisted of sourcing free 3D assets and adding them to our environment, to lighten Trevor’s load. I found a few kits, including a horror house and office. Additionally, I searched for some individual assets that I could not find in any kits, such as beds and a closet. I then implemented these new assets in our first level, starting with the bathrooms and common room. I then moved on to designing the rooms. To ensure that we have variability in our game, I created a BP_Base_Room with three messiness levels: clean, normal, and messy. For each model that I added to the room, I assigned it to a messiness level that controls its visibility. Next, I made five child rooms based around themes: plants, studious, gamer, stoner, and normal. I used assets from the kits and other individual assets I found to decorate these rooms. The normal room just extends the base room. Finally, I added the rooms to the level, randomizing both the theme and messiness of each one.
+
+### Berenis
+
+The past week, I worked on creating level designs and handling trigger boxes for level interactions. I started working on the planning for Level 1 and Level 2, and started us off for door interactions for Level 1 to collaborate with Domenic. This week, I will be working on completing Level 1 and getting us started on Level 2. Looking into
+
+### Chloe
+
+This past week I’ve worked on making the next set of background music for the tutorial and level 2, as well as sourcing more sound effects and implementing attenuations into specific objects. I have started looking for 3D assets to decorate rooms with that I can link sounds to. One idea we had was to link whispering audio to mirrors, so I’ve been working on developing an attenuation that the player can hear that draws them to a mirror to have a trippy visual or begin a puzzle. This next week, my goal is to fully implement the sound effects and their sound triggers to real-game items and effects, as well as getting the background music working for all levels and synced with the audio menu that Domenic made.
+
+### Brandon
+
+My tasks this past week have been designing and writing up the moment-to-moment gameplay as well as designing some of the puzzles for the player to experience through each level. In order to give the player an objective that makes sense for an RA, we decided to make a basic few tasks that need to be done for each floor, such as close all dorm doors, check bathrooms, and turn off any appliances in the common room. These basic tasks are used to drive the player to go to specific places in the level, with the puzzles and experiences happening due to the player having to check those places. This coming week, my main goal will be to implement the puzzles into the level with all of the events properly working and triggering when they are supposed to.
+
+### Domenic
+
+My main priority this week was finalizing and fully fleshing out the menu functionality and visuals aspect. I was able to get the ui to fit the vibe of the game with a moving background for the main menu. Another thing that I worked on this week as part of getting the menu to function was getting a soundclass system established so that the audio settings would function properly. The final thing I worked on was getting the doors to work properly and rotate around a proper axis as opposed to the center of the door. These tasks are important towards getting the feel and look of the game to feel more complete and get the levels to a state where only the puzzle aspect of it would need to be implemented for it to be finished.
+
+## Artistic Work
+
+### Trevor
+
+In the past 2 weeks, I finished modeling Twizz in ZBrush as well as giving him placeholder textures and UV unwrapping him. The UV unwrapping on the face wasn’t optimal, so I polished the UVs in 3ds Max. With the unwrapped model complete, I added Twizz into 3ds Max and scaled him correctly to around 180 cm. I then created 18 unique morph targets, modeling them in ZBrush and implementing them into 3ds Max. I then finally rigged Twizz using CAT. I gave him weight paints and exported him into Unreal Engine. Using a 3rd person player, I retargeted Twizz to the Unreal mannequin which allows the player to control him. Unfortunately, I realized I forgot to mirror the weight paints, so I went back into 3ds Max and fixed them up for the most part. I also tested moving his rig in Unreal but it is breaking at the moment.
